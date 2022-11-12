@@ -32,23 +32,44 @@ class FaceMainUi extends StatelessWidget {
 
               // stories
               SectionName("Stories", "See Archives"),
-              storiesSection(),
-              dividerLine(),
 
+              Row(
+                children: [
+                  AddUserStory(UserModel.onlyUserImage(("assets/images/user.png"))),
+
+                  SingleChildScrollView(
+                    child: Row(
+                        children: DataConverter.convertStoriesDataToList().map<Widget>((e) {
+                          return FollowersStories(e);
+                        }).toList()),
+                  ),
+                ],
+              ),
+
+
+
+              dividerLine(),
               //posts
               postsSection(),
-              dividerLine(),
+              SingleChildScrollView(
+                child: Column(
+                    children: DataConverter.convertPostDataToList().map<Widget>((e) {
+                      return PostBody(e);
+                    }).toList()),
+              ),
 
+
+              dividerLine(),
               // friends
               SectionName("Friends Suggestions", "View All"),
-              friendsSection(),
 
-              // SingleChildScrollView(
-              //   child: Row(
-              //       children: DataConverter.convertFriendSugDataToList().map<Widget>((e) {
-              //         return friendsSuggestionsData(e);
-              //       }).toList()),
-              // ),
+              // friendsSection(),
+              SingleChildScrollView(
+                child: Row(
+                    children: DataConverter.convertFriendSugDataToList().map<Widget>((e) {
+                      return FriendsSuggestions(e);
+                    }).toList()),
+              ),
             ],
           ),
         ));
@@ -63,31 +84,6 @@ class FaceMainUi extends StatelessWidget {
         ));
   }
 
-  Widget storiesSection() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          AddUserStory("assets/images/user.png"),
-          FollowersStories(
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png",
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png"),
-          FollowersStories(
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png",
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png"),
-          FollowersStories(
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png",
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png"),
-          FollowersStories(
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png",
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png"),
-          FollowersStories(
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png",
-              "https://cdn-icons-png.flaticon.com/512/147/147144.png"),
-        ],
-      ),
-    );
-  }
 
   Widget postsSection() {
     return Column(
@@ -95,7 +91,7 @@ class FaceMainUi extends StatelessWidget {
         PostBody(PostModel(
           "hi",
           "#hash #hash2",
-          "https://cdn-icons-png.flaticon.com/512/147/147144.png",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/2014-06_Israel_-_Jerusalem_090_%2814936890061%29.jpg/1200px-2014-06_Israel_-_Jerusalem_090_%2814936890061%29.jpg",
           "12 k",
           2,
           3,
@@ -108,7 +104,7 @@ class FaceMainUi extends StatelessWidget {
         PostBody(PostModel(
           "hello",
           "#hash #hash2 #hash #hash2",
-          "https://cdn-icons-png.flaticon.com/512/147/147144.png",
+          "https://media.istockphoto.com/id/598091988/vector/business-people-avatars.jpg?s=1024x1024&w=is&k=20&c=VLjRPma-XOvjTj-B4sQX_v0zHOrJ1CtTM3U-c66knjI=",
           "20 k",
           79,
           22,
@@ -122,27 +118,5 @@ class FaceMainUi extends StatelessWidget {
     );
   }
 
-  Widget friendsSection() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          FriendsSuggestions('friendName', 'friendHint',
-              'https://images.unsplash.com/photo-1667855898568-40720de40a08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=370&q=80'),
-          FriendsSuggestions('friendName', 'friendHint',
-              'https://images.unsplash.com/photo-1667855898568-40720de40a08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=370&q=80'),
-          FriendsSuggestions('friendName', 'friendHint',
-              'https://images.unsplash.com/photo-1667855898568-40720de40a08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=370&q=80'),
-          FriendsSuggestions('friendName', 'friendHint',
-              'https://images.unsplash.com/photo-1667855898568-40720de40a08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=370&q=80'),
-          FriendsSuggestions('friendName', 'friendHint',
-              'https://images.unsplash.com/photo-1667855898568-40720de40a08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=370&q=80'),
-          FriendsSuggestions('friendName', 'friendHint',
-              'https://images.unsplash.com/photo-1667855898568-40720de40a08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=370&q=80'),
-          FriendsSuggestions('friendName', 'friendHint',
-              'https://images.unsplash.com/photo-1667855898568-40720de40a08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=370&q=80'),
-        ],
-      ),
-    );
-  }
+
 }

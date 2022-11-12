@@ -8,7 +8,7 @@ import '../data/stories_data.dart';
 class DataConverter{
 
   static List<PostModel> convertPostDataToList() {
-    return postData.map((e) {
+    return postsData.map((e) {
       return PostModel.fromJsonMap(e);
     }).toList();
   }

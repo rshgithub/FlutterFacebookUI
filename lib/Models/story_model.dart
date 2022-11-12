@@ -5,6 +5,7 @@ class StoryModel {
 
   StoryModel(this.user_image, this.story_image);
 
+
   StoryModel.fromJsonMap(Map<String, dynamic> json) {
     user_image = json['user_image'];
     story_image = json['story_image'];

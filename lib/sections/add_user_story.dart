@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:ft_facebook_ui/Models/user_model.dart';
 
 class AddUserStory extends StatelessWidget {
-  String mainUserImage;
+  UserModel user;
 
-  AddUserStory(this.mainUserImage);
+  AddUserStory(this.user);
 
   @override
   Widget build(BuildContext context) {
-    return addUserStoryButton(mainUserImage);
+    return addUserStoryButton(user.image!);
   }
 
   Widget addUserStoryContainer(String mainUserImage) {

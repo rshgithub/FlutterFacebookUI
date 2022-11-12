@@ -8,6 +8,7 @@ class UserModel {
   bool? isVerified;
 
   UserModel(this.name, this.image,this.timeFrom, this.isVerified);
+  UserModel.onlyUserImage(this.image);
 
   UserModel.fromJsonMap(Map<String, dynamic> json) {
     name = json['name'];

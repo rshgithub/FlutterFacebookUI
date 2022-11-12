@@ -1,14 +1,14 @@
-List<Map<String,dynamic>> postData = [
+List<Map<String,dynamic>> postsData = [
   {
-    "text": 'this is my office, do you like it',
-    "hashtag": '#hashtag #me #blablabla',
-    "reactions": '12 k',
+    "text": "this is my office, do you like it",
+    "hashtag": "#hashtag #me #blablabla",
+    "reactions": "12 k",
     "comments": 3,
     "shares": 5,
-    "image": "https://plus.unsplash.com/premium_photo-1666318300512-8b159e275945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/2014-06_Israel_-_Jerusalem_090_%2814936890061%29.jpg/1200px-2014-06_Israel_-_Jerusalem_090_%2814936890061%29.jpg",
     "user": {
       "image":
-      "https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "https://cdn-icons-png.flaticon.com/512/147/147144.png",
       "name": "aya Ahmed",
       "timeFrom": "2 m",
       "isVerified": false
@@ -16,15 +16,15 @@ List<Map<String,dynamic>> postData = [
   },
 
   {
-    "text": 'post body here',
-    "hashtag": '#hashtag #me #blablabla',
-    "reactions": '17 k',
+    "text": "post body here",
+    "hashtag": "#hashtag #me #blablabla",
+    "reactions": "17 k",
     "comments": 2,
     "shares": 7,
-    "image": "https://images.unsplash.com/photo-1667936514763-cab7e24d0834?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/2014-06_Israel_-_Jerusalem_090_%2814936890061%29.jpg/1200px-2014-06_Israel_-_Jerusalem_090_%2814936890061%29.jpg",
     "user": {
       "image":
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGUlMjBmYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375__340.png",
       "name": "Omar sami",
       "timeFrom": "4 d",
       "isVerified": true

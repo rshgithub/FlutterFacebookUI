@@ -1,15 +1,14 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:ft_facebook_ui/Models/story_model.dart';
 
 class FollowersStories extends StatelessWidget {
-  String userImage, storyImage;
-  FollowersStories(this.userImage, this.storyImage);
+  StoryModel story;
+  FollowersStories( this.story);
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: storyCell(userImage, storyImage),
-    );
+    return  storyCell(story.user_image!, story.story_image!);
   }
 
   Widget storyCell(String userImage, String storyImage) {
@@ -39,8 +38,11 @@ class FollowersStories extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(width: 2, color: Colors.white),
                         ),
-                        child: Image.network(userImage,
-                            width: 25, height: 25, fit: BoxFit.cover),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.network(userImage,
+                              width: 25, height: 25, fit: BoxFit.cover),
+                        ),
                       )),
                 ],
               ),
